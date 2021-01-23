@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trang chủ</title>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" />
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="modal.css" />
+</head>
+<body onload="render()">
+    <div>
+        <div class="card px-3">
+            <div class="card-header px-0 pb-2">
+                <h2 class="text-uppercase text-center">Index Page</h2>
+                <a  class="btn btn-sm btn-primary" onclick="document.getElementById('id01').style.display='block'"
+                style="width:auto;" class="btn btn-sm btn-primary">Create New Note</a>
+                <div>
+                    <h3 id="Email"></h3>
+                    
+                </div>
+            </div>
+            <div class="card-block table-border-style">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyRole">
+                            <tr>
+                                <th id="hvn"></th>
+                                <th id="listDescription"></th>
+                                <td>
+                                        <button class="btn btn-sm btn-danger btn-round py-1 font-weight-bold"onclick="remove()" >Remove</button>
+                                </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="id01" class="modal">
+        <form class="modal-content animate" onsubmit="return(addItem());">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-uppercase text-center">Create New Note</h2>
+                    </div>
+                    <div>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-3 m-auto">
+                                    <div class="form-group">
+                                        <label>Note</label>
+                                        <input type="text" path="description" id="description" name = "description" class="form-control" />
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <button class="btn btn-primary m-b-0">Lưu lại</button>
+                                        <button type="button"
+                                            onclick="document.getElementById('id01').style.display='none'" class="btn btn-primary m-b-0"
+                                            class="cancelbtn">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script language="javascript" src="validate.js"></script>
+    <script language="javascript" src="item.js"></script>
+    <script language="javascript" src="animation.js"></script>
+</body>
+
+</html>
